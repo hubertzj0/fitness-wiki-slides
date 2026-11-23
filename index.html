@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>給健身新手的第一堂飲食與訓練課 | 增肌減脂科學指南</title>
+  <title>給健身新手的第一堂飲食與訓練課 | 增肌減脂科學指南 (15頁完整版)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       height: 60px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -53,7 +53,7 @@
     .brand {
       font-weight: 900;
       color: var(--blue);
-      font-size: 1rem;
+      font-size: 0.98rem;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -64,146 +64,77 @@
       background: var(--orange);
       display: inline-block;
     }
-    .controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .controls { display: flex; align-items: center; gap: 10px; }
     .btn {
       border: 1px solid var(--border);
       background: #fff;
       color: var(--navy);
       padding: 6px 14px;
       border-radius: 8px;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
       font-family: inherit;
     }
-    .btn:hover:not(:disabled) {
-      border-color: var(--blue);
-      color: var(--blue);
-      background: var(--blue-soft);
-    }
-    .btn:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-    }
-    .btn-primary {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: #fff;
-    }
-    .btn-primary:hover:not(:disabled) {
-      background: #EA580C;
-      border-color: #EA580C;
-      color: #fff;
-    }
-    .page-indicator {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      min-width: 56px;
-      text-align: center;
-    }
-    .progress-track {
-      position: fixed;
-      top: 60px; left: 0; right: 0;
-      height: 4px;
-      background: var(--border);
-      z-index: 100;
-    }
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--blue), var(--orange));
-      width: 10%;
-      transition: width 0.3s ease;
-    }
+    .btn:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); background: var(--blue-soft); }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-primary { background: var(--orange); border-color: var(--orange); color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: #EA580C; border-color: #EA580C; color: #fff; }
+    .page-indicator { font-size: 0.88rem; font-weight: 700; color: var(--text-muted); min-width: 60px; text-align: center; }
+
+    .progress-track { position: fixed; top: 60px; left: 0; right: 0; height: 4px; background: var(--border); z-index: 100; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--orange)); width: 6.6%; transition: width 0.3s ease; }
 
     /* 簡報主容器 */
-    .deck {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 90px 20px 60px;
-    }
-
+    .deck { max-width: 1060px; margin: 0 auto; padding: 88px 20px 60px; }
     .slide {
       display: none;
       background: var(--bg-card);
       border-radius: 20px;
-      padding: 44px 48px;
+      padding: 40px 46px;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
-      animation: fadeIn 0.3s ease;
-      min-height: 580px;
+      animation: fadeIn 0.28s ease;
+      min-height: 600px;
       flex-direction: column;
       justify-content: space-between;
     }
-    .slide.active {
-      display: flex;
-    }
+    .slide.active { display: flex; }
+    body.scroll-mode .slide { display: flex; margin-bottom: 32px; min-height: auto; }
+    body.scroll-mode .nav-only { display: none; }
 
-    /* 講義捲動模式 */
-    body.scroll-mode .slide {
-      display: flex;
-      margin-bottom: 32px;
-      min-height: auto;
-    }
-    body.scroll-mode .nav-only {
-      display: none;
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* 標題與標籤 */
+    /* 標籤與標題 */
     .slide-tag {
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       padding: 4px 12px;
       border-radius: 999px;
       background: var(--orange-soft);
       color: var(--orange);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .slide-tag.blue { background: var(--blue-soft); color: var(--blue); }
     .slide-tag.green { background: var(--green-soft); color: var(--green); }
 
-    h1 {
-      font-size: 2.6rem;
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-    h2 {
-      font-size: 1.85rem;
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-    .subtitle {
-      font-size: 1.08rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
+    h1 { font-size: 2.5rem; font-weight: 900; color: var(--navy); line-height: 1.25; margin-bottom: 14px; }
+    h2 { font-size: 1.75rem; font-weight: 900; color: var(--navy); line-height: 1.3; margin-bottom: 8px; }
+    .subtitle { font-size: 1.02rem; color: var(--text-muted); margin-bottom: 20px; }
 
     /* 格線與卡片 */
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 
     .card {
       background: var(--bg-page);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 20px;
+      padding: 18px 20px;
     }
     .card.white { background: #fff; }
     .card.orange { background: var(--orange-soft); border-color: #FED7AA; }
@@ -211,33 +142,26 @@
     .card.green { background: var(--green-soft); border-color: #A7F3D0; }
     .card.red { background: var(--red-soft); border-color: #FECACA; }
 
-    .card h3 {
-      font-size: 1.08rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .card p, .card li {
-      font-size: 0.95rem;
-      color: var(--text-main);
-    }
-    .card ul {
-      padding-left: 18px;
-      margin-top: 6px;
-    }
-    .card li { margin-bottom: 6px; }
+    .card h3 { font-size: 1.04rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .card p, .card li { font-size: 0.93rem; color: var(--text-main); }
+    .card ul, .card ol { padding-left: 18px; margin-top: 6px; }
+    .card li { margin-bottom: 5px; }
 
-    /* 數據高亮 */
-    .stat-num {
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: var(--orange);
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
+    /* 數據高亮與公式框 */
+    .stat-num { font-size: 2.15rem; font-weight: 900; color: var(--orange); line-height: 1.15; margin-bottom: 6px; }
     .stat-num.blue { color: var(--blue); }
     .stat-num.green { color: var(--green); }
     .stat-num.red { color: var(--red); }
+
+    .formula-box {
+      background: var(--navy);
+      color: #F8FAFC;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    .formula-box strong { color: #FDBA74; }
 
     /* TDEE 條狀圖 */
     .tdee-bar {
@@ -245,66 +169,55 @@
       height: 36px;
       border-radius: 10px;
       overflow: hidden;
-      margin: 14px 0 8px;
-      font-size: 0.8rem;
+      margin: 12px 0 8px;
+      font-size: 0.78rem;
       font-weight: 700;
       color: #fff;
     }
-    .tdee-seg {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      white-space: nowrap;
-      padding: 0 6px;
-    }
+    .tdee-seg { display: flex; align-items: center; justify-content: center; white-space: nowrap; padding: 0 6px; }
 
-    /* 表格 */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 0.94rem;
-    }
-    th, td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--border);
-      text-align: left;
-    }
-    th {
-      background: var(--navy);
-      color: #fff;
-      font-weight: 700;
-    }
+    /* 表格與捲動容器 */
+    .table-wrap { width: 100%; overflow-x: auto; margin-top: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 560px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { background: var(--navy); color: #fff; font-weight: 700; }
     th:first-child { border-radius: 10px 0 0 0; }
     th:last-child { border-radius: 0 10px 0 0; }
     tr:nth-child(even) td { background: var(--bg-page); }
 
+    .store-tag {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-right: 4px;
+    }
+    .tag-711 { background: #DCFCE7; color: #166534; }
+    .tag-fm { background: #DBEAFE; color: #1E40AF; }
+
     /* 頁尾來源標註 */
     .slide-footer {
-      margin-top: 24px;
-      padding-top: 14px;
+      margin-top: 22px;
+      padding-top: 12px;
       border-top: 1px dashed var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .source-badge {
-      background: var(--blue-soft);
-      color: var(--blue);
-      padding: 3px 10px;
-      border-radius: 6px;
-      font-weight: 700;
-    }
+    .source-badge { background: var(--blue-soft); color: var(--blue); padding: 3px 10px; border-radius: 6px; font-weight: 700; }
 
-    /* 封面頁特化 */
+    /* 封面頁 */
     .hero-box {
       background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
       color: #fff;
       border-radius: 16px;
-      padding: 40px;
-      margin-bottom: 24px;
+      padding: 38px;
+      margin-bottom: 22px;
     }
     .hero-box h1 { color: #fff; }
     .hero-box .subtitle { color: #CBD5E1; margin-bottom: 0; }
@@ -312,18 +225,17 @@
       display: inline-block;
       background: var(--orange);
       color: #fff;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    /* 響應式 */
     @media (max-width: 768px) {
-      .slide { padding: 28px 22px; min-height: auto; }
-      h1 { font-size: 1.9rem; }
-      h2 { font-size: 1.45rem; }
+      .slide { padding: 24px 18px; min-height: auto; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.38rem; }
       .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
       .topbar { padding: 0 12px; }
       .brand span.brand-text { display: none; }
@@ -332,79 +244,76 @@
 </head>
 <body>
 
-  <!-- 頂部導覽列 -->
   <header class="topbar">
     <div class="brand">
       <span class="brand-dot"></span>
-      <span class="brand-text">增肌減脂科學指南｜LLM Wiki 教學簡報</span>
+      <span class="brand-text">增肌減脂科學指南｜15 頁完整教學講義</span>
     </div>
     <div class="controls">
-      <button class="btn" id="modeToggle" title="切換翻頁或長捲動閱讀">切換講義模式</button>
+      <button class="btn" id="modeToggle">切換講義模式</button>
       <button class="btn nav-only" id="prevBtn">← 上一頁</button>
-      <span class="page-indicator nav-only" id="pageIndicator">1 / 10</span>
+      <span class="page-indicator nav-only" id="pageIndicator">1 / 15</span>
       <button class="btn btn-primary nav-only" id="nextBtn">下一頁 →</button>
     </div>
   </header>
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 
-  <!-- 簡報內容 -->
   <main class="deck">
 
     <!-- 第 1 頁：封面 -->
     <section class="slide active">
       <div>
         <div class="hero-box">
-          <span class="hero-pill">給健身新手的科學入門課</span>
+          <span class="hero-pill">LLM Wiki 驅動・原理＋實戰完整版</span>
           <h1>給健身新手的第一堂<br>飲食與訓練課</h1>
-          <p class="subtitle">整合 5 篇運動營養與肌肥大權威文獻，帶你一次搞懂增肌減脂的底層邏輯。</p>
+          <p class="subtitle">整合 5 篇運動科學權威文獻，每個主題拆解為「科學原理＋實戰操作」，帶你從零打造可持續的增肌減脂計畫。</p>
         </div>
         <div class="grid-4">
           <div class="card orange">
             <h3>01 熱量赤字</h3>
-            <p>搞懂 TDEE 與減脂前提，不再盲目節食。</p>
+            <p>TDEE 原理與實際熱量計算範例。</p>
           </div>
           <div class="card blue">
             <h3>02 蛋白質與肌酸</h3>
-            <p>吃對關鍵營養素，把訓練效果放到最大。</p>
+            <p>超商外食蛋白表＋肌酸正確吃法。</p>
           </div>
           <div class="card green">
             <h3>03 阻力訓練</h3>
-            <p>掌握漸進超負荷，練出真正有效的肌肥大。</p>
+            <p>肌肥大機制＋新手一週 3 天課表。</p>
           </div>
           <div class="card">
             <h3>04 睡眠與恢復</h3>
-            <p>別讓熬夜毀了你的汗水，守住肌肉與代謝。</p>
+            <p>熬夜掉肌數據＋深層睡眠策略。</p>
           </div>
         </div>
       </div>
       <div class="slide-footer">
-        <span>提示：可使用鍵盤 <strong>← / →</strong> 鍵翻頁，或點擊右上角切換講義模式</span>
-        <span class="source-badge">LLM Wiki 知識庫驅動</span>
+        <span>操作提示：鍵盤 <strong>← / →</strong> 翻頁，或點擊右上角切換「講義長捲動模式」</span>
+        <span class="source-badge">1 / 15</span>
       </div>
     </section>
 
-    <!-- 第 2 頁：破除迷思 -->
+    <!-- 第 2 頁：系統思維 -->
     <section class="slide">
       <div>
-        <span class="slide-tag blue">觀念建立</span>
+        <span class="slide-tag blue">總覽觀念</span>
         <h2>增肌減脂不是苦行，是一場「系統工程」</h2>
-        <p class="subtitle">新手最常卡關的原因，往往不是不夠努力，而是只做了其中一塊拼圖。</p>
-
+        <p class="subtitle">只做單一面向（例如只節食、或只狂重訓）最容易卡關，必須讓三大支柱同時運作。</p>
         <div class="grid-2">
           <div class="card red">
             <h3>❌ 新手常見的單點誤區</h3>
             <ul>
-              <li><strong>只靠節食不重訓</strong>：體重掉了，但流失大量肌肉，變成「泡芙人」且容易復胖。</li>
-              <li><strong>拼命重訓卻不吃夠蛋白質</strong>：肌肉沒有建材修復，練得再累也長不出線條。</li>
-              <li><strong>迷信網紅偏方與神奇補給品</strong>：忽略總熱量與睡眠，本末倒置。</li>
+              <li><strong>只節食不重訓</strong>：體重掉了但肌肉也跟著流失，代謝變慢且極易復胖。</li>
+              <li><strong>拼命重訓不吃夠蛋白</strong>：肌肉沒有建材修補，練得再累也長不出線條。</li>
+              <li><strong>迷信網紅偏方與熬夜</strong>：忽略總熱量與睡眠恢復，讓白天的汗水白費。</li>
             </ul>
           </div>
           <div class="card green">
             <h3>✅ 科學系統思維（三大支柱）</h3>
             <ul>
-              <li><strong>飲食控制（方向盤）</strong>：決定體重往哪走，並提供修復肌肉的原料。</li>
+              <li><strong>飲食控制（方向盤）</strong>：決定體脂往下走，並提供修復肌肉的胺基酸。</li>
               <li><strong>阻力訓練（油門）</strong>：給身體明確訊號——「這些肌肉很重要，必須保留並變強」。</li>
-              <li><strong>睡眠恢復（維修廠）</strong>：真正長肌肉、燒脂肪的黃金修復時段。</li>
+              <li><strong>睡眠恢復（維修廠）</strong>：真正長肌肉、燒脂肪與調節荷爾蒙的黃金時段。</li>
             </ul>
           </div>
         </div>
@@ -415,181 +324,336 @@
       </div>
     </section>
 
-    <!-- 第 3 頁：熱量赤字 -->
+    <!-- 第 3 頁：主題一 原理頁 -->
     <section class="slide">
       <div>
-        <span class="slide-tag">飲食第一課</span>
+        <span class="slide-tag">主題 01・科學原理</span>
         <h2>減脂的唯一前提：熱量赤字 (Calorie Deficit)</h2>
-        <p class="subtitle">每天「吃進去的熱量」小於「身體消耗的總熱量 (TDEE)」，身體才會動用脂肪。</p>
-
-        <div class="card white" style="margin-bottom: 18px;">
-          <h3>每日總能量消耗 (TDEE) 是由什麼組成的？</h3>
+        <p class="subtitle">只要每天「吃進去的熱量」小於「每日總能量消耗 (TDEE)」，身體就會動用脂肪補齊缺口。</p>
+        <div class="card white" style="margin-bottom: 16px;">
+          <h3>每日總能量消耗 (TDEE) 的四大組成</h3>
           <div class="tdee-bar">
             <div class="tdee-seg" style="width: 60%; background: var(--navy);">基礎代謝 BMR (~60%)</div>
             <div class="tdee-seg" style="width: 20%; background: var(--blue);">日常活動 NEAT (~20%)</div>
-            <div class="tdee-seg" style="width: 10%; background: var(--orange);">食物消化 TEF</div>
+            <div class="tdee-seg" style="width: 10%; background: var(--orange);">食物產熱 TEF</div>
             <div class="tdee-seg" style="width: 10%; background: var(--green);">運動 EAT</div>
           </div>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">關鍵洞察：生酮、168 斷食或低脂飲食都沒有神奇燃脂魔法，它們只是幫你達成「攝取 &lt; TDEE」的工具，<strong>能長期持續的飲食法才是最好的飲食法</strong>。</p>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">研究證實：生酮、低脂、168 斷食在總熱量相同時減脂效果一致；飲食法的本質是幫你達成熱量赤字的「工具」，<strong>可持續性</strong>才是關鍵。</p>
         </div>
-
         <div class="grid-2">
           <div class="card orange">
             <div class="stat-num">-300 ~ 500 大卡</div>
-            <h3>新手建議的溫和熱量赤字</h3>
-            <p>約從 TDEE 減少 15%–20%，每週穩定減重 0.3–0.5 公斤，避免極端節食造成肌肉流失與暴飲暴食。</p>
+            <h3>新手建議的溫和赤字</h3>
+            <p>約從 TDEE 減少 15%–20%，每週穩定減重 0.3–0.5 公斤，不餓肚子也最能守住肌肉。</p>
           </div>
           <div class="card blue">
-            <h3>減脂期保肌必做兩件事</h3>
+            <h3>極端節食的三大代價</h3>
             <ul>
-              <li>優先吃足 <strong>蛋白質</strong>（每公斤體重 1.6–2.2 克）。</li>
-              <li>維持規律的 <strong>阻力訓練</strong>，告訴身體保留肌肉。</li>
+              <li>肌肉大量流失，基礎代謝率 (BMR) 下降。</li>
+              <li>飢餓感飆升，極易引發報復性暴食。</li>
+              <li>日常活動量 (NEAT) 無意識降低，反而更難瘦。</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="slide-footer">
         <span>Wiki 概念：[[熱量赤字]]</span>
-        <span class="source-badge">資料來源：Source 01 (Aragon et al., 2017)</span>
+        <span class="source-badge">Source 01 (Aragon et al., 2017)</span>
       </div>
     </section>
 
-    <!-- 第 4 頁：蛋白質攝取量 -->
+    <!-- 第 4 頁：主題一 實戰頁（TDEE 計算範例） -->
     <section class="slide">
       <div>
-        <span class="slide-tag blue">飲食第二課</span>
-        <h2>肌肉的建材：蛋白質攝取量 (Protein Intake)</h2>
-        <p class="subtitle">重訓是下達「蓋房子」的施工指令，而蛋白質就是必備的磚塊與水泥。</p>
+        <span class="slide-tag green">主題 01・實戰教學</span>
+        <h2>TDEE 實際計算範例：3 步驟算出你的減脂熱量</h2>
+        <p class="subtitle">以一位 <strong>25 歲、身高 175 公分、體重 70 公斤、每週重訓 3 天</strong> 的男性新手為例：</p>
 
-        <div class="grid-3" style="margin-bottom: 18px;">
-          <div class="card orange">
-            <div class="stat-num">1.6 g / kg</div>
-            <h3>增肌黃金甜蜜點</h3>
-            <p>統合分析（49 項研究）指出，每日每公斤體重 1.6 克即可達到接近高峰的增肌效益。</p>
-          </div>
-          <div class="card blue">
-            <div class="stat-num blue">1.6–2.2 g</div>
-            <h3>減脂期保險區間</h3>
-            <p>處於熱量赤字時，稍微拉高蛋白質攝取可更有效防止肌肉被分解。</p>
-          </div>
-          <div class="card green">
-            <div class="stat-num green">20–40 g</div>
-            <h3>每餐建議分配量</h3>
-            <p>總量最重要，但平均分攤到三餐吃，更有利於吸收與維持飽足感。</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>🍱 實戰換算：以 70 公斤新手為例（每日目標 ≈ 112 克蛋白質）</h3>
-          <p style="margin-top: 6px;">
-            <strong>早餐</strong>：無糖豆漿 + 2 顆蛋（約 28g）｜
-            <strong>午餐</strong>：手掌大雞胸肉便當（約 40g）｜
-            <strong>晚餐</strong>：烤魚或瘦肉 + 豆腐（約 44g）。
-            <br><span style="color: var(--text-muted); font-size: 0.88rem;">* 原型食物吃不夠時再用乳清或植物蛋白粉補齊即可；體脂偏高者可用「目標體重」乘以 1.6 計算。</span>
-          </p>
-        </div>
-      </div>
-      <div class="slide-footer">
-        <span>Wiki 概念：[[蛋白質攝取量]]</span>
-        <span class="source-badge">資料來源：Source 02 (Morton et al., 2018)</span>
-      </div>
-    </section>
-
-    <!-- 第 5 頁：肌酸作用 -->
-    <section class="slide">
-      <div>
-        <span class="slide-tag green">科學補給</span>
-        <h2>高 CP 值的能量外掛：肌酸作用 (Creatine)</h2>
-        <p class="subtitle">肌酸就像肌肉的「快充行動電源」，讓你在重訓關鍵組數多推 1–2 下。</p>
-
-        <div class="grid-2" style="margin-bottom: 18px;">
-          <div class="card blue">
-            <h3>⚡ 科學原理：加速 ATP 充電</h3>
-            <p>高強度重訓（10 秒內爆發）仰賴細胞內的 <strong>ATP</strong> 供能。補充肌酸能提高肌肉內的<strong>磷酸肌酸 (PCr)</strong> 存量，在 ATP 耗盡瞬間快速充電，延緩力竭並放大訓練成效。</p>
-          </div>
-          <div class="card orange">
-            <div class="stat-num">3–5 克 / 天</div>
-            <h3>怎麼吃最簡單有效？</h3>
-            <p>買最便宜的<strong>一水肌酸 (Creatine Monohydrate)</strong>，有練沒練天天吃，約 <strong>28 天</strong>達到完全飽和，不需要花哨配方或高劑量填充期。</p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>❓ 吃了會變胖嗎？</h3>
-            <p>前 1–2 週體重可能上升 <strong>0.5–1.5 公斤</strong>，那是肌肉細胞儲水（細胞水合作用），不是長脂肪。</p>
-          </div>
-          <div class="card">
-            <h3>❓ 會傷腎或抽筋嗎？</h3>
-            <p>數十年研究證實，<strong>健康成年人</strong>長期吃標準劑量高度安全，記得每天多喝水即可。</p>
-          </div>
-          <div class="card">
-            <h3>❓ 什麼時候吃最好？</h3>
-            <p>肌酸看的是長期飽和度，何時吃差異不大，跟著正餐或蛋白粉一起吃最不會忘記。</p>
-          </div>
-        </div>
-      </div>
-      <div class="slide-footer">
-        <span>Wiki 概念：[[肌酸作用]]</span>
-        <span class="source-badge">資料來源：Source 03 (Kreider et al., 2017)</span>
-      </div>
-    </section>
-
-    <!-- 第 6 頁：阻力訓練原理 -->
-    <section class="slide">
-      <div>
-        <span class="slide-tag">訓練核心</span>
-        <h2>啟動增肌開關：阻力訓練原理 (Resistance Training)</h2>
-        <p class="subtitle">給肌肉「目前剛好覺得吃力」的挑戰，身體才會在休息時把它修補得更強壯。</p>
-
-        <div class="grid-3" style="margin-bottom: 18px;">
-          <div class="card orange">
-            <h3>1. 機械張力（最關鍵）</h3>
-            <p><strong>Mechanical Tension</strong><br>肌肉承受重量並收縮伸展時的物理拉力，是目前公認最核心的肌肥大驅動開關。</p>
-          </div>
-          <div class="card blue">
-            <h3>2. 代謝壓力</h3>
-            <p><strong>Metabolic Stress</strong><br>中高次數訓練產生的肌肉充血與痠脹感（代謝物堆積），能輔助刺激生長。</p>
-          </div>
-          <div class="card">
-            <h3>3. 肌肉損傷</h3>
-            <p><strong>Muscle Damage</strong><br>微細肌纖維撕裂。但請記住：<strong>隔天很痠痛 ≠ 練得比較有效</strong>，過度損傷反而拖慢恢復。</p>
-          </div>
+        <div class="formula-box">
+          <strong>Step 1 算基礎代謝 (BMR，Mifflin-St Jeor 公式)</strong><br>
+          男性：10 × 體重(kg) + 6.25 × 身高(cm) - 5 × 年齡 + 5 （女性最後改為 - 161）<br>
+          👉 代入計算：10(70) + 6.25(175) - 5(25) + 5 = <strong>1,674 大卡</strong>
         </div>
 
         <div class="grid-2">
-          <div class="card green">
-            <h3>📈 黃金法則：漸進超負荷 (Progressive Overload)</h3>
-            <p>肌肉會適應固定重量。只要記錄每次訓練，讓這週比上週<strong>加重 1–2 公斤、多做 1 下，或動作更穩</strong>，就是成功的超負荷。</p>
-          </div>
-          <div class="card white">
-            <h3>🏋️ 新手課表起手式</h3>
+          <div class="card blue">
+            <h3>Step 2 乘上活動係數算出 TDEE</h3>
             <ul>
-              <li>優先練<strong>多關節複合動作</strong>（深蹲、推舉、划船、下拉）。</li>
-              <li>每組 <strong>6–12 下</strong>，做到保留次數 <strong>RIR 1–3</strong>（感覺還能再做 1–3 下就停）。</li>
-              <li>每個大肌群每週累積 <strong>10–12 組</strong> 有效組即可。</li>
+              <li>久坐幾乎不運動：BMR × 1.2</li>
+              <li>輕度活動（每週練 1–3 天）：<strong>BMR × 1.375</strong></li>
+              <li>中度活動（每週練 3–5 天）：BMR × 1.55</li>
+            </ul>
+            <p style="margin-top: 8px; font-weight: 700; color: var(--blue);">👉 範例 TDEE = 1,674 × 1.375 ≈ 2,300 大卡</p>
+          </div>
+          <div class="card orange">
+            <h3>Step 3 扣掉 300–500 大卡＝減脂目標</h3>
+            <div class="stat-num">1,800 ~ 2,000 大卡</div>
+            <p>先吃這個熱量 <strong>2 週</strong>，每天早上空腹量體重取週平均：</p>
+            <ul>
+              <li>每週掉 0.3–0.5 公斤 → 剛剛好，繼續維持！</li>
+              <li>體重完全沒動 → 再微調減少 150–200 大卡。</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="slide-footer">
-        <span>Wiki 概念：[[阻力訓練原理]]</span>
-        <span class="source-badge">資料來源：Source 04 (Schoenfeld, 2010)</span>
+        <span>提醒：公式只是「起點估計值」，實際執行兩週後依體重趨勢微調才最準確</span>
+        <span class="source-badge">實戰應用：[[熱量赤字]]</span>
       </div>
     </section>
 
-    <!-- 第 7 頁：睡眠與恢復 -->
+    <!-- 第 5 頁：主題二 原理頁 -->
     <section class="slide">
       <div>
-        <span class="slide-tag blue">第三支柱</span>
-        <h2>最常被忽略的關鍵：睡眠與恢復 (Sleep & Recovery)</h2>
-        <p class="subtitle">重訓當下是在「破壞」肌肉，真正長肌肉與燃燒脂肪的時間，是你睡著的時候。</p>
+        <span class="slide-tag blue">主題 02・科學原理</span>
+        <h2>肌肉的建材：蛋白質攝取量 (Protein Intake)</h2>
+        <p class="subtitle">重訓是下達「蓋房子」的施工指令，蛋白質分解後的胺基酸（特別是白胺酸 Leucine）則是蓋新牆的磚塊。</p>
+        <div class="grid-3" style="margin-bottom: 16px;">
+          <div class="card orange">
+            <div class="stat-num">1.6 g / kg</div>
+            <h3>增肌黃金甜蜜點</h3>
+            <p>49 項研究統合分析證實，每日每公斤體重 1.6 克即可達接近高峰的增肌效益。</p>
+          </div>
+          <div class="card blue">
+            <div class="stat-num blue">1.6–2.2 g</div>
+            <h3>減脂期保肌區間</h3>
+            <p>熱量赤字期間身體分解肌肉風險升高，拉高至 1.6–2.2 g/kg 可提供更強保護。</p>
+          </div>
+          <div class="card green">
+            <div class="stat-num green">20–40 g</div>
+            <h3>每餐建議分配</h3>
+            <p>總量最重要，但平均分攤到三餐吃，更有利於吸收與維持全天飽足感。</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>💡 新手計算小撇步</h3>
+          <p>以 70 公斤新手為例，每天約需 <strong>112 克蛋白質</strong>（70 × 1.6）。若本身體脂偏高（BMI 較高），建議改用「<strong>目標體重 × 1.6</strong>」來計算，避免熱量爆表或吃得太痛苦。</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>Wiki 概念：[[蛋白質攝取量]]</span>
+        <span class="source-badge">Source 02 (Morton et al., 2018)</span>
+      </div>
+    </section>
 
-        <div class="grid-2" style="margin-bottom: 18px;">
+    <!-- 第 6 頁：主題二 實戰頁（外食族／超商高蛋白表） -->
+    <section class="slide">
+      <div>
+        <span class="slide-tag green">主題 02・實戰教學</span>
+        <h2>外食族高蛋白食物表（7-11／全家超商精選）</h2>
+        <p class="subtitle">沒時間自己煮也沒關係！善用便利商店與自助餐，照樣輕鬆吃滿每日蛋白質。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>食物品項</th>
+                <th>常見通路</th>
+                <th>蛋白質（約）</th>
+                <th>熱量（約）</th>
+                <th>新手搭配建議</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>舒肥／即食雞胸肉</strong>（1包）</td>
+                <td><span class="store-tag tag-711">7-11</span><span class="store-tag tag-fm">全家</span></td>
+                <td><strong>22–25 g</strong></td>
+                <td>110–140 kcal</td>
+                <td>低脂高蛋白首選，午晚餐直接加菜</td>
+              </tr>
+              <tr>
+                <td><strong>無糖高纖豆漿</strong>（400–450ml）</td>
+                <td><span class="store-tag tag-711">7-11</span><span class="store-tag tag-fm">全家</span></td>
+                <td><strong>14–16 g</strong></td>
+                <td>150–180 kcal</td>
+                <td>早餐必備，順便補充膳食纖維</td>
+              </tr>
+              <tr>
+                <td><strong>茶葉蛋／溏心蛋</strong>（2顆）</td>
+                <td><span class="store-tag tag-711">7-11</span><span class="store-tag tag-fm">全家</span></td>
+                <td><strong>12–14 g</strong></td>
+                <td>140–150 kcal</td>
+                <td>CP 值最高，隨時補齊 10 克以上蛋白</td>
+              </tr>
+              <tr>
+                <td><strong>高蛋白飲／保久乳清</strong>（1瓶）</td>
+                <td><span class="store-tag tag-711">7-11</span><span class="store-tag tag-fm">全家</span></td>
+                <td><strong>20–25 g</strong></td>
+                <td>150–200 kcal</td>
+                <td>練後或下午嘴饞時最方便的補充</td>
+              </tr>
+              <tr>
+                <td><strong>鹽味毛豆／烤雞腿排</strong>（1份）</td>
+                <td><span class="store-tag tag-711">7-11</span><span class="store-tag tag-fm">全家</span></td>
+                <td><strong>15–22 g</strong></td>
+                <td>160–240 kcal</td>
+                <td>換換口味避免吃膩，毛豆適合當零食</td>
+              </tr>
+              <tr>
+                <td><strong>自助餐：板豆腐＋清蒸魚</strong></td>
+                <td>一般外食</td>
+                <td><strong>25–30 g</strong></td>
+                <td>250–320 kcal</td>
+                <td>避開油炸與勾芡，優先選滷、烤、清蒸</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>超商黃金組合範例：無糖豆漿＋2 顆茶葉蛋＋雞胸肉 ＝ 一次攝取約 50 克蛋白質！</span>
+        <span class="source-badge">實戰應用：[[蛋白質攝取量]]</span>
+      </div>
+    </section>
+
+    <!-- 第 7 頁：主題三 原理頁 -->
+    <section class="slide">
+      <div>
+        <span class="slide-tag">主題 03・科學原理</span>
+        <h2>高 CP 值能量外掛：肌酸作用 (Creatine)</h2>
+        <p class="subtitle">肌酸是運動科學界研究最透徹、實證最有效的合法營養補充品，就像肌肉的「快充行動電源」。</p>
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>⚡ 科學機制：加速 ATP 再生</h3>
+            <p>深蹲、臥推這類 10 秒內的高強度爆發出力，主要靠細胞內的 <strong>ATP（三磷酸腺苷）</strong> 供能。補充肌酸能增加肌肉內的 <strong>磷酸肌酸 (PCr)</strong> 存量，在 ATP 耗盡的瞬間快速充電還原，讓你多推關鍵的 <strong>1–2 下</strong>。</p>
+          </div>
+          <div class="card orange">
+            <h3>💧 細胞水合作用 (Cell Volumization)</h3>
+            <p>肌酸會將水分帶入肌肉細胞內，讓肌肉看起來更飽滿，同時能促進細胞內的合成代謝訊號。它不是直接「變出肌肉」，而是透過提升訓練品質來間接放大肌肥大效果。</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>Wiki 概念：[[肌酸作用]]</span>
+        <span class="source-badge">Source 03 (Kreider et al., 2017)</span>
+      </div>
+    </section>
+
+    <!-- 第 8 頁：主題三 實戰頁 -->
+    <section class="slide">
+      <div>
+        <span class="slide-tag green">主題 03・實戰教學</span>
+        <h2>肌酸怎麼買、怎麼吃？新手 Q&amp;A 一次搞懂</h2>
+        <p class="subtitle">不需要花大錢買花俏配方，照著最簡單的標準吃法就能獲得 100% 效果。</p>
+        <div class="grid-3" style="margin-bottom: 16px;">
+          <div class="card orange">
+            <div class="stat-num">3–5 克 / 天</div>
+            <h3>每日標準劑量</h3>
+            <p>選最便宜的<strong>一水肌酸 (Creatine Monohydrate)</strong>，天天吃（沒練也要吃），約 <strong>28 天</strong>完全飽和。</p>
+          </div>
+          <div class="card blue">
+            <h3>不用做「填充期」</h3>
+            <p>網路上常說第一週要一天吃 20 克（填充期），其實只快了兩週見效，還容易拉肚子；新手直接每天 3–5 克最穩。</p>
+          </div>
+          <div class="card green">
+            <h3>什麼時候吃？</h3>
+            <p>肌酸看的是體內長期飽和度，何時吃差異不大。建議<strong>跟正餐或蛋白粉一起喝</strong>，最不容易忘記。</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>❓ 吃了體重變重，是變胖嗎？</h3>
+            <p>不是！前 1–2 週體重上升 <strong>0.5–1.5 公斤</strong> 是肌肉儲水的正常好現象，並非體脂肪增加。</p>
+          </div>
+          <div class="card">
+            <h3>❓ 會傷腎、抽筋或掉髮嗎？</h3>
+            <p>數十年研究證實對<strong>健康成年人高度安全</strong>，不會傷腎或抽筋（記得多喝水）；若有腎臟病史請先諮詢醫師。</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>實戰口訣：買一水肌酸 → 每天 3–5 克 → 天天吃＋多喝水</span>
+        <span class="source-badge">Source 03 (Kreider et al., 2017)</span>
+      </div>
+    </section>
+
+    <!-- 第 9 頁：主題四 原理頁 -->
+    <section class="slide">
+      <div>
+        <span class="slide-tag blue">主題 04・科學原理</span>
+        <h2>啟動增肌開關：阻力訓練與肌肥大機制</h2>
+        <p class="subtitle">給肌肉「目前剛好覺得吃力」的機械挑戰，身體才會在休息時把肌纖維修補得更粗、更強壯。</p>
+        <div class="grid-3" style="margin-bottom: 16px;">
+          <div class="card orange">
+            <h3>1. 機械張力（最關鍵）</h3>
+            <p><strong>Mechanical Tension</strong><br>肌肉承受重量並收縮伸展時的物理拉力，是公認最核心的增肌開關。</p>
+          </div>
+          <div class="card blue">
+            <h3>2. 代謝壓力</h3>
+            <p><strong>Metabolic Stress</strong><br>中高次數訓練產生的充血與痠脹感（代謝物堆積），可輔助刺激生長。</p>
+          </div>
+          <div class="card">
+            <h3>3. 肌肉損傷</h3>
+            <p><strong>Muscle Damage</strong><br>微細肌纖維撕裂。請記住：<strong>隔天很痠痛 ≠ 練得有效</strong>，過度損傷反拖慢恢復。</p>
+          </div>
+        </div>
+        <div class="card green">
+          <h3>📈 長期進步的唯一法則：漸進超負荷 (Progressive Overload)</h3>
+          <p>肌肉會快速適應固定重量。只要記錄每次訓練，讓這週比上週<strong>多加 1–2 公斤、多做 1 下，或動作控制更穩</strong>，就能持續觸發成長。每組抓 <strong>RIR 1–3</strong>（做完感覺還能再做 1–3 下）最安全有效。</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>Wiki 概念：[[阻力訓練原理]]</span>
+        <span class="source-badge">Source 04 (Schoenfeld, 2010)</span>
+      </div>
+    </section>
+
+    <!-- 第 10 頁：主題四 實戰頁（新手一週 3 天課表） -->
+    <section class="slide">
+      <div>
+        <span class="slide-tag green">主題 04・實戰教學</span>
+        <h2>新手一週 3 天全身課表（直接帶進健身房）</h2>
+        <p class="subtitle">採用「練一休一」（如一、三、五），以多關節複合動作為主，每個大肌群每週剛好累積 10–12 組有效訓練。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>訓練日</th>
+                <th>動作清單（優先用機械或啞鈴）</th>
+                <th>組數 × 次數</th>
+                <th>組間休息 &amp; 強度</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>週一 (Day A)</strong><br>下肢＋推＋拉</td>
+                <td>1. 腿推機 / 高腳杯深蹲<br>2. 機械胸推 / 啞鈴臥推<br>3. 滑輪下拉 (Lat Pulldown)<br>4. 啞鈴側平舉＋棒式</td>
+                <td>4 組 × 8–10 下<br>4 組 × 8–12 下<br>4 組 × 8–12 下<br>3 組 × 12–15 下</td>
+                <td>大動作休 90–120 秒<br>小動作休 60 秒<br>強度：<strong>RIR 2</strong></td>
+              </tr>
+              <tr>
+                <td><strong>週三 (Day B)</strong><br>後側＋推＋拉</td>
+                <td>1. 羅馬尼亞硬舉 (RDL)<br>2. 坐姿啞鈴肩推<br>3. 坐姿划船 (Seated Row)<br>4. 腿後勾＋捲腹</td>
+                <td>4 組 × 8–10 下<br>4 組 × 8–12 下<br>4 組 × 8–12 下<br>3 組 × 12–15 下</td>
+                <td>大動作休 90–120 秒<br>小動作休 60 秒<br>強度：<strong>RIR 2</strong></td>
+              </tr>
+              <tr>
+                <td><strong>週五 (Day C)</strong><br>全身平衡強化</td>
+                <td>1. 分腿蹲 / 腿推機<br>2. 上斜啞鈴臥推<br>3. 單臂啞鈴划船<br>4. 二頭彎舉＋三頭下壓</td>
+                <td>3 組 × 10 下/邊<br>4 組 × 8–12 下<br>4 組 × 10 下/邊<br>3 組 × 12 下</td>
+                <td>大動作休 90 秒<br>小動作休 60 秒<br>強度：<strong>RIR 1–2</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>進階秘訣：當某個動作能輕鬆做到上限次數（如 12 下），下次訓練就加重 2.5 公斤！</span>
+        <span class="source-badge">實戰應用：[[阻力訓練原理]]</span>
+      </div>
+    </section>
+
+    <!-- 第 11 頁：主題五 原理頁 -->
+    <section class="slide">
+      <div>
+        <span class="slide-tag">主題 05・科學原理</span>
+        <h2>最常被忽略的第三支柱：睡眠與恢復</h2>
+        <p class="subtitle">重訓當下其實是在「微細破壞」肌肉，真正讓肌肉長大、脂肪燃燒的時間，是你閉上眼睛睡著的時候。</p>
+        <div class="grid-2" style="margin-bottom: 16px;">
           <div class="card green">
             <h3>😴 每天睡滿 8.5 小時組</h3>
-            <div class="stat-num green">正常減脂、保留肌肉</div>
-            <p>深層睡眠穩定分泌<strong>生長激素</strong>與<strong>睪固酮</strong>，熱量赤字主要消耗在體脂肪，食慾控制也較平穩。</p>
+            <div class="stat-num green">正常減脂、守住肌肉</div>
+            <p>深層睡眠穩定分泌<strong>生長激素 (GH)</strong> 與<strong>睪固酮</strong>，熱量赤字精準消耗在體脂肪，白天食慾也較穩定。</p>
           </div>
           <div class="card red">
             <h3>🥱 每天只睡 5.5 小時組</h3>
@@ -597,135 +661,152 @@
             <p>在完全相同的熱量赤字下，體脂肪減少量<strong>少了 55%</strong>，但瘦體重（肌肉）流失卻<strong>多了 60%</strong>！</p>
           </div>
         </div>
-
         <div class="card orange">
-          <h3>⚠️ 熬夜的雙重打擊 &amp; 新手恢復建議</h3>
-          <ul>
-            <li><strong>荷爾蒙失調</strong>：睡不夠會讓「飢餓素 (Ghrelin)」與壓力荷爾蒙飆升，隔天特別想吃高糖高油食物。</li>
-            <li><strong>行動標準</strong>：每天至少睡滿 <strong>7–8 小時</strong>；同一肌群訓練後保留 <strong>48 小時</strong> 修復，一週練 3–4 天、保留 3–4 天休息日。</li>
-          </ul>
+          <h3>⚠️ 熬夜還會讓你管不住嘴</h3>
+          <p>睡眠不足會導致促進食慾的<strong>飢餓素 (Ghrelin)</strong> 與壓力荷爾蒙（皮質醇）飆升，隔天大腦會瘋狂渴望高糖、高油食物，大幅提高減脂破戒率。</p>
         </div>
       </div>
       <div class="slide-footer">
         <span>Wiki 概念：[[睡眠與恢復]]</span>
-        <span class="source-badge">資料來源：Source 05 (Nedeltcheva et al., 2010)</span>
+        <span class="source-badge">Source 05 (Nedeltcheva et al., 2010)</span>
       </div>
     </section>
 
-    <!-- 第 8 頁：新手一週實戰清單 -->
+    <!-- 第 12 頁：主題五 實戰頁 -->
     <section class="slide">
       <div>
-        <span class="slide-tag green">整合應用</span>
-        <h2>新手一週實戰行動清單（明天就能照做）</h2>
-        <p class="subtitle">不需要複雜公式，先把這張清單上的基本功做到 80 分，身材就會開始改變。</p>
+        <span class="slide-tag green">主題 05・實戰教學</span>
+        <h2>新手睡眠優化與休息日安排策略</h2>
+        <p class="subtitle">把「睡飽」當成跟「去健身房」一樣重要的課表來排，增肌減脂效率直接翻倍。</p>
+        <div class="grid-2">
+          <div class="card blue">
+            <h3>🌙 提升深層睡眠的 4 個好習慣</h3>
+            <ul>
+              <li><strong>鎖定 7–8 小時</strong>：固定上床與起床時間，週末補眠盡量不超過 1 小時。</li>
+              <li><strong>睡前 1 小時斷網降溫</strong>：減少滑手機藍光，保持臥室全暗、溫度偏涼（約 20–24°C）。</li>
+              <li><strong>咖啡因管制</strong>：下午 2 點後避免喝咖啡或濃茶，以免干擾深層睡眠。</li>
+              <li><strong>避免睡前極限重訓</strong>：若只能晚上練，盡量在睡前 2–3 小時結束。</li>
+            </ul>
+          </div>
+          <div class="card green">
+            <h3>🔋 休息日要幹嘛？（主動恢復）</h3>
+            <ul>
+              <li><strong>遵守 48 小時原則</strong>：同一肌群練完通常需要 48 小時修復，不要天天硬練同一部位。</li>
+              <li><strong>安排輕度活動</strong>：休息日可以散步（增加日常活動消耗 NEAT）或做 15 分鐘伸展。</li>
+              <li><strong>營養照常吃</strong>：休息日肌肉正在修補長大，<strong>蛋白質與肌酸一樣要吃足</strong>！</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>實戰心法：練得苦不如練得巧，睡得飽才能推得重</span>
+        <span class="source-badge">實戰應用：[[睡眠與恢復]]</span>
+      </div>
+    </section>
 
+    <!-- 第 13 頁：整合行動清單 -->
+    <section class="slide">
+      <div>
+        <span class="slide-tag blue">整合應用</span>
+        <h2>新手一週實戰行動清單（明天就能照做）</h2>
+        <p class="subtitle">把 5 篇文獻濃縮成一張行動表，先做到 80 分並持續 3 個月，身材就會明顯改變。</p>
         <div class="grid-3">
           <div class="card orange">
             <h3>🥗 飲食 Checklist</h3>
             <ul>
-              <li>估算自己的 TDEE，設定每日 <strong>-300～500 大卡</strong> 溫和赤字。</li>
-              <li>每天吃足 <strong>1.6 g/kg</strong> 蛋白質，平均分散在三餐。</li>
-              <li>每天固定補充 <strong>3–5 克一水肌酸</strong>，多喝水。</li>
+              <li>算出 TDEE，設定每日 <strong>-300～500 大卡</strong> 赤字。</li>
+              <li>每天吃足 <strong>1.6 g/kg</strong> 蛋白質（善用超商雞胸、豆漿、蛋）。</li>
+              <li>每天固定 <strong>3–5 克一水肌酸</strong>＋多喝水。</li>
             </ul>
           </div>
           <div class="card blue">
             <h3>🏋️ 訓練 Checklist</h3>
             <ul>
-              <li>每週安排 <strong>3 天</strong> 全身或上下肢阻力訓練。</li>
-              <li>以深蹲、推、拉等<strong>複合動作</strong>為主，每組 6–12 下。</li>
-              <li>用手機記錄重量與次數，每週追求一點點<strong>漸進超負荷</strong>。</li>
+              <li>一週 <strong>3 天</strong> 全身課表（練一休一）。</li>
+              <li>每組 6–12 下，抓 <strong>RIR 1–2</strong> 的力竭邊緣。</li>
+              <li>用手機記錄重量，每週追求一點點<strong>漸進超負荷</strong>。</li>
             </ul>
           </div>
           <div class="card green">
             <h3>🌙 恢復 Checklist</h3>
             <ul>
-              <li>把睡眠當成課表，每晚睡滿 <strong>7–8 小時</strong>。</li>
-              <li>睡前 1 小時減少滑手機，保持臥室全暗偏涼。</li>
-              <li>同肌群間隔 <strong>48 小時</strong> 再練，勇敢安排休息日。</li>
+              <li>每晚睡滿 <strong>7–8 小時</strong>，固定作息。</li>
+              <li>同肌群間隔 <strong>48 小時</strong>，勇敢安排休息日。</li>
+              <li>每週看體重平均值，每兩週微調一次熱量。</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="slide-footer">
-        <span>原則：能持續執行三個月的 80 分計畫，遠勝過三天就放棄的 100 分計畫</span>
+        <span>最高原則：能持續三個月的 80 分計畫，遠勝過三天就放棄的 100 分計畫</span>
         <span class="source-badge">整合自 Source 01–05</span>
       </div>
     </section>
 
-    <!-- 第 9 頁：迷思 vs 科學事實 -->
+    <!-- 第 14 頁：避坑總整理 -->
     <section class="slide">
       <div>
         <span class="slide-tag">重點總複習</span>
         <h2>給新手的避坑總整理：迷思 vs. 科學事實</h2>
-        <p class="subtitle">快速檢核 5 個最容易讓新手白忙一場的觀念誤區。</p>
-
-        <table>
-          <thead>
-            <tr>
-              <th style="width: 40%;">❌ 常見迷思</th>
-              <th style="width: 60%;">✅ 科學事實（Wiki 依據）</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>不吃澱粉或 168 斷食減脂效果比較好？</td>
-              <td>總熱量相同時減脂效果一樣；<strong>熱量赤字</strong>與<strong>可持續性</strong>才是關鍵（Source 01）。</td>
-            </tr>
-            <tr>
-              <td>練完 30 分鐘內沒喝乳清就白練了？</td>
-              <td>整天的<strong>蛋白質總量（1.6 g/kg）</strong>遠比單一時間點重要（Source 02）。</td>
-            </tr>
-            <tr>
-              <td>吃肌酸體重變重，是不是變胖或傷腎？</td>
-              <td>是肌肉儲水的正常現象，健康族群每日 3–5 克高度安全（Source 03）。</td>
-            </tr>
-            <tr>
-              <td>隔天肌肉沒有痠到動不了，就是沒練到？</td>
-              <td><strong>機械張力</strong>與<strong>漸進超負荷</strong>才是增肌關鍵，痠痛不等於有效（Source 04）。</td>
-            </tr>
-            <tr>
-              <td>少睡一點沒關係，有控制飲食就會瘦？</td>
-              <td>睡 5.5 小時比睡 8.5 小時<strong>少減 55% 脂肪、多流失 60% 肌肉</strong>（Source 05）。</td>
-            </tr>
-          </tbody>
-        </table>
+        <p class="subtitle">最後快速檢核 5 個最容易讓新手白忙一場的觀念誤區。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 40%;">❌ 常見迷思</th>
+                <th style="width: 60%;">✅ 科學事實（Wiki 依據）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>不吃澱粉或 168 斷食減脂效果比較好？</td>
+                <td>總熱量相同時效果一樣；<strong>熱量赤字</strong>與<strong>可持續性</strong>才是關鍵（Source 01）。</td>
+              </tr>
+              <tr>
+                <td>練完 30 分鐘內沒喝乳清就白練了？</td>
+                <td>整天的<strong>蛋白質總量（1.6 g/kg）</strong>遠比單一時間點重要（Source 02）。</td>
+              </tr>
+              <tr>
+                <td>吃肌酸體重變重，是不是變胖或傷腎？</td>
+                <td>是肌肉儲水的正常現象，健康族群每日 3–5 克高度安全（Source 03）。</td>
+              </tr>
+              <tr>
+                <td>隔天肌肉沒痠到動不了，就是沒練到？</td>
+                <td><strong>機械張力</strong>與<strong>漸進超負荷</strong>才是增肌關鍵，痠痛不等於有效（Source 04）。</td>
+              </tr>
+              <tr>
+                <td>少睡一點沒關係，有控制飲食就會瘦？</td>
+                <td>睡 5.5 小時比睡 8.5 小時<strong>少減 55% 脂肪、多流失 60% 肌肉</strong>（Source 05）。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="slide-footer">
         <span>複習完成！所有結論皆可回溯至你的 LLM Wiki 筆記</span>
-        <span class="source-badge">綜合檢核</span>
+        <span class="source-badge">14 / 15</span>
       </div>
     </section>
 
-    <!-- 第 10 頁：參考文獻 -->
+    <!-- 第 15 頁：參考文獻 -->
     <section class="slide">
       <div>
         <span class="slide-tag blue">References</span>
         <h2>參考文獻與 LLM Wiki 知識來源</h2>
         <p class="subtitle">本教學簡報內容皆由個人 LLM Wiki 知識庫整理生成，以下為收錄之 5 篇核心文獻：</p>
-
         <div class="card white">
-          <ol style="padding-left: 20px; font-size: 0.94rem;">
-            <li style="margin-bottom: 12px;">
-              <strong>[Source 01 熱量赤字]</strong> Aragon, A. A., et al. (2017). <em>International Society of Sports Nutrition position stand: diets and body composition</em>. Journal of the International Society of Sports Nutrition, 14(1), 16.
-            </li>
-            <li style="margin-bottom: 12px;">
-              <strong>[Source 02 蛋白質攝取量]</strong> Morton, R. W., et al. (2018). <em>A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults</em>. British Journal of Sports Medicine, 52(6), 376-384.
-            </li>
-            <li style="margin-bottom: 12px;">
-              <strong>[Source 03 肌酸作用]</strong> Kreider, R. B., et al. (2017). <em>International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine</em>. Journal of the International Society of Sports Nutrition, 14(1), 18.
-            </li>
-            <li style="margin-bottom: 12px;">
-              <strong>[Source 04 阻力訓練原理]</strong> Schoenfeld, B. J. (2010). <em>The mechanisms of muscle hypertrophy and their application to resistance training</em>. Journal of Strength and Conditioning Research, 24(10), 2857-2872.
-            </li>
-            <li>
-              <strong>[Source 05 睡眠與恢復]</strong> Nedeltcheva, A. V., et al. (2010). <em>Insufficient sleep undermines dietary efforts to reduce adiposity</em>. Annals of Internal Medicine, 153(7), 435-441.
-            </li>
+          <ol style="padding-left: 20px; font-size: 0.92rem;">
+            <li style="margin-bottom: 11px;"><strong>[Source 01 熱量赤字]</strong> Aragon, A. A., et al. (2017). <em>International Society of Sports Nutrition position stand: diets and body composition</em>. JISSN, 14(1), 16.</li>
+            <li style="margin-bottom: 11px;"><strong>[Source 02 蛋白質攝取量]</strong> Morton, R. W., et al. (2018). <em>A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults</em>. BJSM, 52(6), 376-384.</li>
+            <li style="margin-bottom: 11px;"><strong>[Source 03 肌酸作用]</strong> Kreider, R. B., et al. (2017). <em>International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine</em>. JISSN, 14(1), 18.</li>
+            <li style="margin-bottom: 11px;"><strong>[Source 04 阻力訓練原理]</strong> Schoenfeld, B. J. (2010). <em>The mechanisms of muscle hypertrophy and their application to resistance training</em>. JSCR, 24(10), 2857-2872.</li>
+            <li><strong>[Source 05 睡眠與恢復]</strong> Nedeltcheva, A. V., et al. (2010). <em>Insufficient sleep undermines dietary efforts to reduce adiposity</em>. Annals of Internal Medicine, 153(7), 435-441.</li>
           </ol>
         </div>
       </div>
       <div class="slide-footer">
         <span>《給健身新手的第一堂飲食與訓練課》— End</span>
-        <span class="source-badge">10 / 10</span>
+        <span class="source-badge">15 / 15</span>
       </div>
     </section>
 
@@ -738,7 +819,6 @@
     const indicator = document.getElementById('pageIndicator');
     const progressFill = document.getElementById('progressFill');
     const modeToggle = document.getElementById('modeToggle');
-
     let current = 0;
 
     function updateSlide(index) {
